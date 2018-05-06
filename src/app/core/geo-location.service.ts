@@ -12,6 +12,6 @@ export class GeoLocationService {
     return this.http.get('http://api.ipstack.com/' + ip + '?access_key=' + environment.geoipApiKey);
   }
   fetchUserGeoLocation(): Observable<Object> {
-    return this.http.get('http://api.ipstack.com/check' + '?access_key=' + environment.geoipApiKey);
+    return this.http.get('http://api.ipstack.com/check' + '?access_key=' + environment.geoipApiKey)
   }
 }

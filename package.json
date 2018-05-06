@@ -4,21 +4,22 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build --prod",
     "test": "ng test --browsers ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --aot --prod"
-
+    "heroku-postbuild": "ng build --aotgit status --prod"
   },
   "private": true,
   "dependencies": {
     "@agm/core": "^1.0.0-beta.2",
     "@angular-redux/store": "^7.1.1",
     "@angular/animations": "^5.2.0",
+    "@angular/cli": "~1.7.4",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
+    "@angular/compiler-cli": "^5.2.0",
     "@angular/core": "^5.2.0",
     "@angular/forms": "^5.2.0",
     "@angular/http": "^5.2.0",
@@ -26,10 +27,13 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "core-js": "^2.4.1",
+    "express": "^4.16.3",
+    "path": "^0.12.7",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.1",
     "redux-observable": "^0.14.1",
     "rxjs": "^5.5.6",
+    "typescript": "~2.5.3",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
@@ -37,10 +41,11 @@
     "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
     "@types/jasmine": "~2.8.3",
-    "@types/redux-logger": "^3.0.0",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
+    "@types/redux-logger": "^3.0.0",
     "codelyzer": "^4.0.1",
+    "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.0",
