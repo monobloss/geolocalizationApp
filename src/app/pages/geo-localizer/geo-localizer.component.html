@@ -1,0 +1,61 @@
+<app-modal [heading]="'Friendly question :)'"
+           [description]="'This application is able to read your IP address and display your location on the world map. If you agree click continue, if you don\'t want to share your IP hit close button'"
+           [primaryBtnTxt]="'Show me my location'" [secondaryBtnTxt]="'Close'"></app-modal>
+<div *ngIf="isLoading$ | async" class="is-loading"><span>Loading please wait...</span><img class="loader-img"
+                                                                                           src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Ajax_loader_metal_512.gif"/>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <app-all-searches-list></app-all-searches-list>
+    </div>
+    <div class="col-sm-8">
+      <div class="row">
+        <div class="col-sm-8">
+          <app-map-with-location [lat]="currentLocationInfo?.locationLat" [lng]="currentLocationInfo?.locationLng"
+                                 [text]="'Please type in valid IP address or website URL to see its location on the map'"
+                                 [title]="'Current location map'"
+                                 [ip]="currentLocationInfo?.ip"></app-map-with-location>
+        </div>
+        <div class="col-sm-4">
+          <app-location-info [continent]="currentLocationInfo?.continentName"
+                             [country]="currentLocationInfo?.countryName" [capital]="currentLocationInfo?.capitalName"
+                             [flag]="currentLocationInfo?.countryFlag" [ip]="currentLocationInfo?.ip"
+                             [text]="'Here you will see details about the IP you have searched for'"></app-location-info>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <hr>
+          <form class="form-group" #searchForm="ngForm" (ngSubmit)="searchForLocation(ipAddress)" novalidate>
+            <div class="search-container">
+              <input class="form-control search-input" type="text" name="name" [(ngModel)]="ipAddress" required
+                     pattern="^((\w+\.)?\w+\.\w+|((2[0-5]{2}|1[0-9]{2}|[0-9]{1,2})\.){3}(2[0-5]{2}|1[0-9]{2}|[0-9]{1,2}))(\/)?$"/>
+              <button [disabled]="!searchForm.valid" class="btn btn-primary search-input-btn" type="submit">Locate
+                IP/Domain
+              </button>
+            </div>
+            <small *ngIf="searchForm.invalid && (searchForm.dirty || searchForm.touched)">Please enter valid IP eg:
+              78.88.146.96 or valid URL eg: amazon.com
+            </small>
+          </form>
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <app-map-with-location [lat]="lastLocationInfo?.locationLat" [lng]="lastLocationInfo?.locationLng"
+                                 [text]="'You do not have any previous searches just yet! Or your previous one did not return any meaningful results'"
+                                 [title]="'Previous location map'"
+                                 [ip]="lastLocationInfo?.ip"></app-map-with-location>
+        </div>
+        <div class="col-sm-4">
+          <app-location-info [continent]="lastLocationInfo?.continentName" [country]="lastLocationInfo?.countryName"
+                             [capital]="lastLocationInfo?.capitalName" [flag]="lastLocationInfo?.countryFlag"
+                             [ip]="lastLocationInfo?.ip"
+                             [text]="'In here you will see the details of previously searched IP'"></app-location-info>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

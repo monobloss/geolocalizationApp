@@ -1,0 +1,58 @@
+.is-loading{
+  position: absolute;
+  top: 0;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+  width: 100%;
+  height: 50%;
+  font-size: 2rem;
+  color: #fff;
+  line-height: 500px;
+  z-index: 999;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  display:table;
+}
+.container{
+  position: relative;
+  margin-top:20px;
+  max-width: 1300px;
+}
+.loader-img{
+  position: inherit;
+  width: 3%;
+  left: 26%;
+  right: inherit;
+  top: inherit;
+  bottom: inherit;
+  margin: inherit;
+}
+.form-group{
+  width:100%;
+}
+.search-input{
+  width:80%;
+  position:relative;
+}
+.search-input-btn{
+  position:absolute;
+  top:0px;
+  right:0px;
+  width: 18%;
+}
+.search-container{
+  position:relative;
+}
+.ng-invalid.ng-dirty {
+  color: #ff0000;
+  border-color: #ff0000;
+}
+.ng-valid {
+  color: #29d429;
+  border-color: #29d429;
+}
+.form-control:focus{
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.1);
+}

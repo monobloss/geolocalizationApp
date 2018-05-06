@@ -1,0 +1,5 @@
+
+.modal-visible{
+  display:initial;
+  background: rgba(0, 0, 0, 0.6);
+}

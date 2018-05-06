@@ -1,0 +1,10 @@
+<app-placeholder-square *ngIf="!country" [text]="text"></app-placeholder-square>
+<div *ngIf="country" class="card card-outline-primary">
+  <ul class="list-group">
+    <li class="list-group-item"><h5>IP</h5> {{ip}}</li>
+    <li class="list-group-item"><h5>Continent</h5> {{continent}}</li>
+    <li class="list-group-item"><h5>Country name</h5> {{country}}</li>
+    <li class="list-group-item"><h5>Country Capital</h5> {{capital}}</li>
+    <li class="list-group-item"><h5>Flag</h5> <img class="country-flag" [src]="flag"/></li>
+  </ul>
+</div>

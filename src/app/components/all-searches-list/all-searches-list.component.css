@@ -1,0 +1,9 @@
+.list-group{
+  height: 100%;
+  border: 2px solid #dfdfdf;
+  padding: 10px;
+  border-radius: 5px;
+}
+.own-ip-btn{
+  background: #22c523;
+}

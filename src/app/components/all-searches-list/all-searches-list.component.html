@@ -1,0 +1,12 @@
+<app-placeholder-square *ngIf="(listOfPreviousSearches$ | async) === undefined" [text]="'Here you will see complete history of your searches'"></app-placeholder-square>
+<ul *ngIf="(listOfPreviousSearches$ | async) !== undefined" class="list-group">
+  <h4>List of your previous searches</h4>
+  <li class="list-group-item justify-content-between">
+    Check out your own IP
+    <button type="button" (click)="searchForUserLocation()" class="btn btn-secondary float-right own-ip-btn">Locate my IP</button>
+  </li>
+  <li *ngFor="let previousSearchIp of (listOfPreviousSearches$ | async) " class="list-group-item justify-content-between">
+    {{previousSearchIp}}
+    <button type="button" (click)="showOnMap(previousSearchIp)" class="btn btn-secondary float-right">Locate again</button>
+  </li>
+</ul>
