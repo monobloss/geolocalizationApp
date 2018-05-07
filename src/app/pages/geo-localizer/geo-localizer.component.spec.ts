@@ -2,14 +2,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GeoLocalizerComponent } from './geo-localizer.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
-import {FormsModule, NgSelectOption} from "@angular/forms";
-import {NgRedux, select} from "@angular-redux/store";
+import {FormsModule} from "@angular/forms";
 import {GlobalActions} from "../../store/global/globalActions";
-import { NgReduxTestingModule, MockNgRedux } from '@angular-redux/store/testing';
+import { NgReduxTestingModule } from '@angular-redux/store/testing';
 
 
 describe('GeoLocalizerComponent', () => {
-  let mockNgRedux: NgRedux<any>;
   let component: GeoLocalizerComponent;
   let fixture: ComponentFixture<GeoLocalizerComponent>;
 

@@ -4,8 +4,6 @@ import {CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
 import {NgRedux} from "@angular-redux/store";
 import {GlobalActions} from "../../store/global/globalActions";
 import {Observable} from "rxjs/Observable";
-import {IAppState} from "../../store/model";
-import {StoreModule} from "../../store/module";
 import {MockNgRedux} from "@angular-redux/store/lib/testing";
 
 

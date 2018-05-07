@@ -1,7 +1,7 @@
 import {TestBed, getTestBed} from '@angular/core/testing';
 
 import {GeoLocationService} from "./geo-location.service";
-import {HttpClient, HttpClientModule, HttpHandler} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
 import {IGeoLocationApiResponse} from "../store/interfaces/IGeoLocationApiResponse";
 let injector: TestBed;
@@ -35,6 +35,5 @@ describe('GeoLocationService', () => {
 
     const req = httpMock.expectOne('http://api.ipstack.com/google.com?access_key=0d5fd0f40d64d2aa780679cfc11d578b');
     expect(req.request.method).toBe("GET");
-
   });
 });
