@@ -25,4 +25,14 @@ describe('ModalComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should have modal visible', () => {
+    expect(component.modalVisible).toBeTruthy();
+  });
+  it('should have modal visibilty inverted', () => {
+    component.toggleModal()
+    expect(component.modalVisible).toBeFalsy();
+    component.toggleModal()
+    expect(component.modalVisible).toBeTruthy();
+
+  });
 });

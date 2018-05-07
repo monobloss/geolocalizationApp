@@ -7,11 +7,11 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./map-with-location.component.css']
 })
 export class MapWithLocationComponent {
-  @Input() lat
-  @Input() lng
-  @Input() text
-  @Input() title
-  @Input() ip
+  @Input() lat: number
+  @Input() lng: number
+  @Input() text: string
+  @Input() title: string
+  @Input() ip: string
 
   constructor() {}
 

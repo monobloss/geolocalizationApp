@@ -21,7 +21,7 @@ export class ModalComponent implements OnInit {
   toggleModal() {
     this.modalVisible = !this.modalVisible;
   }
-  searchForUserLocation() {
+    searchForUserLocation() {
     this.toggleModal()
     return this.ngRedux.dispatch(this.globalActions.getUserGeoLocationInfo({isLoading: true, isReady: true}));
   }

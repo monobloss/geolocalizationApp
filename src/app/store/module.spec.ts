@@ -3,6 +3,7 @@ import { NgReduxTestingModule, MockNgRedux } from '@angular-redux/store/testing'
 import { TestBed, async, getTestBed } from '@angular/core/testing';
 import { StoreModule } from './module';
 import { RootEpics } from './epics';
+import {IAppState} from "./model";
 
 describe('Store Module', () => {
   let mockNgRedux: NgRedux<any>;
@@ -27,7 +28,6 @@ describe('Store Module', () => {
   it('should configure the store when the module is loaded', async(() => {
     const configureSpy = spyOn(MockNgRedux.getInstance(), 'configureStore');
     const instance = new StoreModule(mockNgRedux, mockEpics, devTools);
-
     expect(configureSpy).toHaveBeenCalled();
   }));
 });

@@ -9,6 +9,7 @@ import { NgReduxTestingModule, MockNgRedux } from '@angular-redux/store/testing'
 
 
 describe('GeoLocalizerComponent', () => {
+  let mockNgRedux: NgRedux<any>;
   let component: GeoLocalizerComponent;
   let fixture: ComponentFixture<GeoLocalizerComponent>;
 
@@ -30,4 +31,5 @@ describe('GeoLocalizerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

@@ -6,12 +6,12 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./location-info.component.css']
 })
 export class LocationInfoComponent {
-  @Input() continent
-  @Input() country
-  @Input() capital
-  @Input() flag
-  @Input() ip
-  @Input() text
+  @Input() continent: string
+  @Input() country: string
+  @Input() capital: string
+  @Input() flag: string
+  @Input() ip: string
+  @Input() text: string
 
   constructor() { }
 
